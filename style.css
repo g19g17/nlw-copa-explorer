@@ -1,0 +1,230 @@
+/* Elemento universal, tudo que se alterar nele será alterado para todos */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Custom Color Tag*/
+body.green {
+    --card-border-color-primary: #07cc17;
+    --card-background-color: #020c02;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: linear-gradient(90deg, #020c02, #122b14, #020c02);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* id da tag "app"*/
+#app {
+    width: fit-content;
+    margin: 52px auto;
+}
+
+.card {
+    padding: 240px 200px;
+    text-align: center;
+    height: 1px;
+
+    background: var(--card-background-color);
+    border-top: 3px solid var(--card-border-color-primary); /*Trata a variável como um valor dentro da propriedade,*/
+    border-radius: 6px;
+    
+    margin-top: 150px;
+    margin-bottom: 10px;
+}
+
+.cardBoard {
+    position: absolute;
+    left: 50%;
+    top: 470px;
+    transform: translateX(-50%);
+
+    padding: 100px;
+    padding-right: 0px;
+
+    background-color: #020702;
+    border-top: 4px solid #072209;
+    border-bottom: 4px solid #072209;
+    border-radius: 10px;
+    width: 428px;
+
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    padding-top: 30px;
+
+}
+
+.liste {
+    gap: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-left: -20px;
+    margin-right: 75px;
+}
+
+.liste + .liste {
+    padding-top: 24px;
+    border-top: 1px solid #0b300b;
+}
+
+.liste strong {
+    font-weight: 90;
+    font-size: 36px;
+    line-height: 125%;
+
+    color: rgb(241, 241, 241);
+}
+
+.agenda h2 {
+    position: absolute;
+    left: 31%;
+    top: 30px;
+    gap: 16px;
+
+    font-weight: 90;
+    font-size: 20px;
+    
+    padding: 8px 100px;
+
+    border: 1px solid hsl(61, 93%, 37%);
+    border-radius: 5px;
+    border-bottom: 4px solid #ccbf07;
+
+    margin-left: -50px;
+    margin-top: 2px;
+
+    color: #F7DD43;
+
+}
+
+.agenda h2 spam {
+    color: rgb(241, 241, 241);
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.agenda p {
+    position: absolute;
+    left: 3%;
+    letter-spacing: 1.3px;
+
+    padding: 0px 1px;
+
+    width: fit-content;
+    margin-inline: auto;
+
+    font-size: 17px;
+    color: #F7DD43;
+}
+
+.imgS img {
+    position: absolute;
+    left: 50%;
+    top: 100px;
+    width: 115px;
+    height: 115px;
+
+    border: 4px solid #07cc17;
+    border-radius: 100px;
+
+    margin-left: -60px;
+    margin-top: 2px;
+}
+
+.playerName {
+    position: absolute;
+    left: 50%;
+    top: 250px;
+    transform: translateX(-50%);
+
+    color: #2cf077;
+
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 25px;
+}
+
+.time img {
+    position: absolute;
+    top: 310px;
+    width: 40px;
+
+    padding: 3px 10px;
+    border: 1px solid #0b300b;
+    border-radius: 10px;
+
+    background-color: #031803;
+
+    margin-left: -31px;
+    margin-top: 2px;
+}
+
+.icon_list {
+    border-bottom: 2px solid #0b300b;
+
+}
+
+.icon_list ul li {
+    display: inline-block;
+    text-align: center;
+    padding-right: 4px;
+
+    margin-left: 5px;
+    margin-right: 1px;
+}
+
+.icon_list li img {
+    width: 30px;
+}
+
+
+/* a "," agrupa dois seletores para eles receberem a mesma alteração */
+.imgS img:hover,
+.time img:hover,
+.icon_list li img:hover,
+.liste img:hover,
+.card h2:hover {
+    transform: scale(1.1); /* quando o mouse estiver em cima, as tags aumentarão sua escala para 1.1 */
+}
+
+.imgS img,
+.card h2 {
+    transition: transform 0.3s; /* tempo de duração em "s" na execução do transform */
+}
+
+.card {
+    animation: appear .2s;
+}
+
+/* Animations */
+
+@keyframes appear {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    #cards {
+        max-width: 662px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
